@@ -10,7 +10,7 @@ import os
 
 # logger config
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='my_log/BKLN.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='my_log/my.log', encoding='utf-8', level=logging.DEBUG)
 
 
 # ======================================================================================================================
@@ -169,18 +169,18 @@ def compile_por_csv(por_lst, datetimes_lst):
 def exec_section_two():
     # once all 12 sector csv's are downloaded, import as dfs - CHANGE FILEPATHS (NOT FOLDER OR FILE NAMES) HERE -
     sector_files = [
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/na_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/hc_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/re_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/it_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/inds_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/mats_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/cd_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/cs_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/fins_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/utils_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/eng_sect_pxs.csv",
-        "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/coms_sect_pxs.csv"
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/na_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/hc_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/re_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/it_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/inds_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/mats_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/cd_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/cs_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/fins_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/utils_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/eng_sect_pxs.csv",
+        "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/coms_sect_pxs.csv"
     ]
 
     sector_dct = {}
@@ -266,7 +266,7 @@ def exec_section_three():
 
     # generate html report content
     with tempfile.NamedTemporaryFile(mode='w+', delete=False) as temp_file:
-        qs.reports.html(returns, benchmark=benchmark, output=temp_file.name, title='BKLN Strategy vs. SPY')
+        qs.reports.html(returns, benchmark=benchmark, output=temp_file.name, title='Strategy vs. SPY')
     with open(temp_file.name, 'r') as f:
         html_content = f.read()
     desktop_directory = os.path.join(os.path.expanduser('~'), 'Desktop')
@@ -298,18 +298,18 @@ def exec_section_four():
     # create a dict mapping industries to their respective csv file paths for easy access
     # - CHANGE FILEPATHS (NOT FOLDER OR FILE NAMES) HERE -
     sector_files = {
-        np.nan: "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/na_sect_pxs.csv",
-        'Health Care': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/hc_sect_pxs.csv",
-        'Real Estate': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/re_sect_pxs.csv",
-        'Information Technology': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/it_sect_pxs.csv",
-        'Industrials': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/inds_sect_pxs.csv",
-        'Materials': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/mats_sect_pxs.csv",
-        'Consumer Discretionary': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/cd_sect_pxs.csv",
-        'Consumer Staples': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/cs_sect_pxs.csv",
-        'Financials': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/fins_sect_pxs.csv",
-        'Utilities': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/utils_sect_pxs.csv",
-        'Energy': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/eng_sect_pxs.csv",
-        'Communication Services': "/Users/benjoergens/PycharmProjects/BKLN_Assignment/sect_pxs/coms_sect_pxs.csv"
+        np.nan: "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/na_sect_pxs.csv",
+        'Health Care': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/hc_sect_pxs.csv",
+        'Real Estate': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/re_sect_pxs.csv",
+        'Information Technology': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/it_sect_pxs.csv",
+        'Industrials': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/inds_sect_pxs.csv",
+        'Materials': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/mats_sect_pxs.csv",
+        'Consumer Discretionary': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/cd_sect_pxs.csv",
+        'Consumer Staples': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/cs_sect_pxs.csv",
+        'Financials': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/fins_sect_pxs.csv",
+        'Utilities': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/utils_sect_pxs.csv",
+        'Energy': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/eng_sect_pxs.csv",
+        'Communication Services': "/Users/benjoergens/PycharmProjects/Assignment/sect_pxs/coms_sect_pxs.csv"
     }
 
     # read all csv files into memory
