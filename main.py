@@ -20,11 +20,11 @@ logging.basicConfig(filename='my_log/my.log', encoding='utf-8', level=logging.DE
 # tiingo config
 config = {}
 config['session'] = True
-config['api_key'] = 'e2f9ec8abc2e37ba5116852a2d847bb70110bd1a'
+config['api_key'] = 'API KEY HERE'
 # initialize
 client = TiingoClient(config)
 
-# ticker_gics_industry file - csv to df
+# ticker_gics_industry file - csv to df - stored in sect_pxs directory on github
 tix_df = pd.read_csv('/Users/benjoergens/Desktop/ticker_gics_industry.csv')
 
 # initialize sectors as empty lists
